@@ -20,12 +20,12 @@
 (provide bf-loop)
 
 (define-macro-cases bf-op
-  [(bf-op ">") #'(gt)] ;;fwd
-  [(bf-op "<") #'(lt)] ;;rwd
-  [(bf-op "+") #'(plus)] ;;inc
-  [(bf-op "-") #'(minus)] ;;dec
-  [(bf-op ".") #'(period)] ;;write
-  [(bf-op ",") #'(comma)]) ;;read
+  [(bf-op ">") #'(gt)] ;;FWD
+  [(bf-op "<") #'(lt)] ;;RWD
+  [(bf-op "+") #'(plus)] ;;INC
+  [(bf-op "-") #'(minus)] ;;DEC
+  [(bf-op ".") #'(period)] ;;WRITE
+  [(bf-op ",") #'(comma)]) ;;READ
 
 (provide bf-op)
 

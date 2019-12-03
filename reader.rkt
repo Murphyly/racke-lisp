@@ -23,7 +23,7 @@
   (define (next-token)
     (define bf-lexer
       (lexer
-       [(char-set "><-.,+[]") lexeme] ;;'fwd''rwd''dec''write''read''inc''begin''end'
+       [(char-set "><-.,+[]") lexeme] ;;'FWD''RWD''DEC''WRITE''READ''INC''BEGIN''END' 
        [any-char (next-token)]))
     (bf-lexer port))
   next-token)

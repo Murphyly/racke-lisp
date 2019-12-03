@@ -4,6 +4,5 @@ bf-program : (bf-op | bf-loop)*
 bf-op      : ">" | "<" | "+" | "-" | "." | ","
 bf-loop    : "[" (bf-op | bf-loop)* "]"
 
-;;bf-op    : "fwd" | "rwd" | "inc" | "dec" | "write" | "read"
-;;bf-loop  : "begin" (bf-op | bf-loop)* "end"
-;;begin end inc dec fwd rwd read write
+;;bf-op    : "FWD" | "RWD" | "INC" | "DEC" | "WRITE" | "READ"
+;;bf-loop  : "BEGIN" (bf-op | bf-loop)* "END"
