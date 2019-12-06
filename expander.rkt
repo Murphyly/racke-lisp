@@ -20,13 +20,15 @@
 (provide bf-loop)
 
 (define-macro-cases bf-op
-  [(bf-op ">") #'(gt)] ;;FWD
-  [(bf-op "<") #'(lt)] ;;RWD
-  [(bf-op "+") #'(plus)] ;;INC
-  [(bf-op "-") #'(minus)] ;;DEC
-  [(bf-op ".") #'(period)] ;;WRITE
-  [(bf-op ",") #'(comma)]) ;;READ
-
+   [(bf-op ">") #'(gt)] ;;FWD
+   [(bf-op "<") #'(lt)] ;;RWD
+   [(bf-op "+") #'(plus)] ;;INC
+   [(bf-op "-") #'(minus)] ;;DEC
+   [(bf-op ".") #'(period)] ;;WRITE
+   [(bf-op ",") #'(comma)] ;;READ
+   [(bf-op ">") ("+" NUMBER)  #'(plusn NUMBER)]
+   [(bf-op) ("-" NUMBER)  #'(ltn NUMBER)]
+)
 (provide bf-op)
 
 (define arr (make-vector 30000 0))
@@ -41,4 +43,6 @@
 (define (minus) (set-current-byte! (sub1 (current-byte))))
 (define (period) (write-byte (current-byte)))
 (define (comma) (set-current-byte! (read-byte)))
+(define (plusn n) (set-current-byte! (+ (current-byte) n)))
+(define (minusn n) (set-current-byte! (- (current-byte) n)))
 
