@@ -33,22 +33,13 @@
        ["end\n" (token 'END "}")]
        ["write\n" (token 'WRITE ".")]
        ["read\n" (token 'READ ",")]
-       ;;["begin\n" "{"]
-       ;;[(char-set "FWD") lexeme]
-       ;;[(char-set "RWD") lexeme]
-       ;;[(char-set "DEC") lexeme]
-       ;;[(char-set "WRITE") lexeme]
-       ;;[(char-set "READ") lexeme]
-       ;;[(char-set "INC") lexeme]
-       ;;[(char-set "BEGIN") lexeme]
-       ;;[(char-set "END") lexeme]
-       [(:seq "fwd" (repetition NUMBER +inf.0 numeric) "\n")
+       [(:seq "fwd" (repetition 1 +inf.0 numeric) "\n")
         (token 'FWD (list "+" (string->number (trim-ends "fwd" lexeme "\n"))))]
-       [(:seq "rwd" (repetition NUMBER +inf.0 numeric) "\n")
+       [(:seq "rwd" (repetition 1 +inf.0 numeric) "\n")
         (token 'RWD (list "+" (string->number (trim-ends "rwd" lexeme "\n"))))]
-       [(:seq "inc" (repetition NUMBER +inf.0 numeric) "\n")
+       [(:seq "inc" (repetition 1 +inf.0 numeric) "\n")
         (token 'INC (list "+" (string->number (trim-ends "inc" lexeme "\n"))))]
-       [(:seq "dec" (repetition NUMBER +inf.0 numeric) "\n")
+       [(:seq "dec" (repetition 1 +inf.0 numeric) "\n")
         (token 'DEC (list "+" (string->number (trim-ends "dec" lexeme "\n"))))]
        [any-char (next-token)]))
     (bf-lexer port))

@@ -1,3 +1,37 @@
 #lang reader "reader-v2.rkt"
 
-++++-+++-++-++[>++++-+++-++-++<-]>.
+inc
+inc
+inc
+inc
+dec
+inc
+inc
+inc
+dec
+inc
+inc
+dec
+inc
+inc
+begin
+ fwd
+ inc
+ inc
+ inc
+ inc
+ dec
+ inc
+ inc
+ inc
+ dec
+ inc
+ inc
+ dec
+ inc
+ inc
+ rwd
+ dec
+end
+fwd
+write
