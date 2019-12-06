@@ -26,8 +26,10 @@
    [(bf-op "-") #'(minus)] ;;DEC
    [(bf-op ".") #'(period)] ;;WRITE
    [(bf-op ",") #'(comma)] ;;READ
-   [(bf-op ">") ("+" NUMBER)  #'(plusn NUMBER)]
-   [(bf-op) ("-" NUMBER)  #'(ltn NUMBER)]
+   [(bf-op) (">" NUMBER)  #'(gtn NUMBER)]
+   [(bf-op) ("<" NUMBER)  #'(ltn NUMBER)]
+   [(bf-op) ("+" NUMBER)  #'(plusn NUMBER)]
+   [(bf-op) ("-" NUMBER)  #'(minusn NUMBER)]
 )
 (provide bf-op)
 
@@ -43,6 +45,8 @@
 (define (minus) (set-current-byte! (sub1 (current-byte))))
 (define (period) (write-byte (current-byte)))
 (define (comma) (set-current-byte! (read-byte)))
+(define (gtn n) (set! ptr (+ ptr n)))
+(define (ltn n) (set! ptr (- ptr n)))
 (define (plusn n) (set-current-byte! (+ (current-byte) n)))
 (define (minusn n) (set-current-byte! (- (current-byte) n)))
 
