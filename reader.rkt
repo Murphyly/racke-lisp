@@ -1,15 +1,15 @@
 #lang br/quicklang
 
-;; BF - Leitor Versão 2 - Chama expansor imperativo
+;; BF - Leitor Versão 3 - Chama expansor funcional
 
 ;; Usa Parser Versão 1
 (require "parser.rkt")
-(require brag/support)
 
-;; Usa a versão expansor imperativo
+;; Usa a versão expansor funcional
 (define (read-syntax path port)
   (define parse-tree (parse path (make-tokenizer port)))
-  (define module-datum `(module bf-mod "expander.rkt"
+  (define module-datum `(module bf-mod
+                          "expander.rkt"
                           ,parse-tree))
   (datum->syntax #f module-datum))
 (provide read-syntax)
@@ -29,8 +29,8 @@
        ["rwd\n" (token 'RWD "<")]
        ["inc\n" (token 'INC "+")]
        ["dec\n" (token 'DEC "-")]
-       ["begin\n" (token 'BEGIN "{")]
-       ["end\n" (token 'END "}")]
+       ["begin\n" (token 'BEGIN "[")]
+       ["end\n" (token 'END "]")]
        ["write\n" (token 'WRITE ".")]
        ["read\n" (token 'READ ",")]
        [(:seq "fwd" (repetition 1 +inf.0 numeric) "\n")
@@ -41,8 +41,7 @@
         (token 'INC (list "+" (string->number (trim-ends "inc" lexeme "\n"))))]
        [(:seq "dec" (repetition 1 +inf.0 numeric) "\n")
         (token 'DEC (list "+" (string->number (trim-ends "dec" lexeme "\n"))))]
+       [(from/stop-before ";" "\n") (next-token)]
        [any-char (next-token)]))
     (bf-lexer port))
   next-token)
-
-

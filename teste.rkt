@@ -11,42 +11,33 @@
 ;;>>.+++.------.--------.>>+.
 
 ;;++++-+++-++-++[>++++-+++-++-++<-]>.
-
-inc
-inc
-inc
-inc
-dec
-inc
-inc
-inc
-dec
-inc
-inc
-dec
-inc
-inc
-begin
- fwd
- inc
- inc
- inc
- inc
- dec
- inc
- inc
- inc
- dec
- inc
- inc
- dec
- inc
- inc
- rwd
- dec
-end
-fwd
+inc 67
+dec 1
 write
+
+
+;;inc 4
+;;dec 1
+;;inc 3
+;;dec 1
+;;inc 2
+;;dec 1
+;;inc 2
+;;begin
+ ;;fwd 1
+ ;;inc 4
+ ;;dec 1
+ ;;inc 3
+ ;;dec 1
+ ;;inc 2
+ ;;dec 1
+ ;;inc 1
+ ;;rwd 1
+ ;;dec 1
+;;end
+;;fwd 1
+;;write
+
 
 ;;inc 6 begin fwd 1 inc 12 rwd 1 dec end fwd 1 write
 ;;fwd 1 inc 10 begin fwd 1 inc 10 rwd 1 dec end fwd 1 write
