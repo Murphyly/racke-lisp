@@ -1,16 +1,16 @@
-# Trabalho P1
-- Reescreva a sintaxe da linguagem BF, para tornar ela legível utilizando um tokenizer para reconhecer os tokens: begin, end, inc (incremente), dec (decremente), fwd (avança), rwd (volte),read, write.
-- Adicione os comandos inc N (incremente N vezes), dec N(decremente N vezes), fwd N (avança N vezes), rwd N (volte N vezes).
-- Reescreva os programas Trabalho 1, Hello World e Gerador de Fatoriais nesta linguagem.
+# Work 1
+- Rewrite the BF language syntax to make it readable using a tokenizer to recognize the tokens: begin, end, inc (increment), dec (decrement), fwd (forward), rwd (go back), read, write.
+- Add the commands inc N (increment N times), dec N (decrement N times), fwd N (forward N times), rwd N (go back N times).
+- Rewrite the Work 1, Hello World and Factorial Generator programs in this language.
 
-# Trabalho P2
-- Aumente para área de memória para 65536 bytes.
-- Crie vários registradores. Por exemplo:
-- (r0 - aponta instrução) PC;
-- (r1 - aponta pilha) STK;
-- (r2 – aponta frame) FRP;
-- (r3 - acumulador) ACC;
-- (r4 – registro geral) BR, 
-- (r5 – registro geral) CR , (r6 – registro geral) DR
-- Crie uma linguagem com comando similares a uma linguagem assembly, move, load, store, add, inc, dec jump, jmpc (jump condicional)
-- Escreva um programa nesta linguagem
+# Work 2
+- Increase memory area to 65536 bytes.
+- Create multiple registrars. For example:
+  - (r0 - points instruction) PC;
+  - (r1 - points stack) STK;
+  - (r2 – points frame) FRP;
+  - (r3 - accumulator) ACC;
+  - (r4 – general registration) BR,
+  - (r5 – general registration) CR, (r6 – general registration) DR
+- Create a language with commands similar to an assembly language, move, load, store, add, inc, dec jump, jmpc (conditional jump)
+- Write a program in this language
